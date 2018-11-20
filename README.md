@@ -1,6 +1,6 @@
 # GPS-it Developer Candidate Test
 
-This project is designed to allow you to show off your JS developing skills. Provided is a fresh out of the box create-react-app, with the **[Esri JS API](https://developers.arcgis.com/javascript/latest/api-reference/index.html)** and map already loaded and ready to go. Use these **[wire frames](https://gpsitnz.sharepoint.com/:b:/g/EY1MQXXBpNhDsd_M8kRvNDcBwsNlySmIjeu2FlEuKv9B_w?e=EUBPUU)** to create a web application to the best of your ability! We are interested in:
+This project is designed to allow you to show off your JS developing skills. Provided is a fresh out of the box create-react-app, with the **[Esri JS API](https://developers.arcgis.com/javascript/latest/api-reference/index.html)** and map already loaded and ready to go. Use these **[wire frames](https://gpsitnz.sharepoint.com/:b:/g/EY1MQXXBpNhDsd_M8kRvNDcBwsNlySmIjeu2FlEuKv9B_w?e=pPMMIr)** to create a web application to the best of your ability! We are interested in:
 
   - Standard coding style across the entire project.
   - Unit testing.
