@@ -6,8 +6,6 @@ const AveragesWidget = () => {
 
     const averages = Averages()
 
-    console.log(averages)
-
     return (
         <>
         <p>Nitrate: { averages.nitrateNationalAverage }</p>
