@@ -8,7 +8,7 @@ export default function Averages() {
   let [nitrateNationalAverage, setNitrateNationalAverage] = useState(null);
   let [phosphorusNationalAverage, setPhosphorusNationalAverage] =
     useState(null);
-  let [compliantSites, setCompliantSites] = useState(0)
+  let [rateOfCompliance, setRateOfCompliance] = useState(0)
 
   function setCompliance(data, nitrateAverage, phosphorusAverage) {
       const dataWithCompliance = data.map((site) => {
@@ -27,11 +27,12 @@ export default function Averages() {
     return dataWithCompliance
   }
 
-  function getComplianceCount(data) {
-    const compliant = data.filter(site => site.Compliance === true)
-    const compliantCount = compliant.length
-    setCompliantSites(compliantCount)
-    return compliantCount
+  function getComplianceRate(allSites) {
+    const compliant = allSites.filter(site => site.Compliance === true)
+    const complianceRate = compliant.length/allSites.length * 100
+    console.log("rate", complianceRate)
+    setRateOfCompliance(complianceRate)
+    return complianceRate
   }
   
   function findNationalAverages(data) {
@@ -47,14 +48,14 @@ export default function Averages() {
     const dataWithCompliance = setCompliance(data, nitrateAverage, phosphorusAverage)
     console.log("data with compliance", dataWithCompliance)
 
-    const complianceCount = getComplianceCount(dataWithCompliance)
-    console.log('count', complianceCount)
+    const rateOfCompliance = getComplianceRate(dataWithCompliance)
+
 
     return {
       dataWithCompliance: dataWithCompliance,
       nitrateNationalAverage: nitrateAverage,
       phosphorusNationalAverage: phosphorusAverage,
-      totalCompliantSites: compliantSites
+      totalRateOfCompliance: rateOfCompliance
     };
   }
 
@@ -70,6 +71,6 @@ export default function Averages() {
   return {
     nitrateNationalAverage: nitrateNationalAverage,
     phosphorusNationalAverage: phosphorusNationalAverage,
-    complianceCount: compliantSites
+    compliantSiteRate: rateOfCompliance
   };
 }

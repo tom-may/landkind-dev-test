@@ -12,7 +12,7 @@ const AveragesWidget = () => {
         <>
         <p>Nitrate: { averages.nitrateNationalAverage }</p>
         <p>Phosphorus: { averages.phosphorusNationalAverage }</p>
-        <p>Compliance Count: { averages.complianceCount }</p>
+        <p>Compliance Rate: { averages.compliantSiteRate }%</p>
         </>
     )
 }
