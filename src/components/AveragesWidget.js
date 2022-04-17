@@ -6,6 +6,8 @@ const AveragesWidget = () => {
 
     const averages = Averages()
 
+    console.log(averages.compliantSiteData)
+
     return (
         <>
         <p>Nitrate: { averages.nitrateNationalAverage }</p>
