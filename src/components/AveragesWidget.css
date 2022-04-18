@@ -1,0 +1,49 @@
+.container {
+    background-color: #00ab70;
+    color: white;
+    /* update shadow */
+    box-shadow: 3px 3px grey; 
+    position: fixed;
+    top: 40px; 
+    right: 40px;
+    width: 40%;
+}
+
+.header {
+ font-size: 1.5em;
+}
+
+.averages-container {
+    display: flex;
+    justify-content: center;
+    
+}
+
+.averages-subcontainer {
+    text-align: center;
+    width: 200px;
+}
+
+.averages-circle {
+
+}
+
+.averages-text {
+
+}
+
+.averages-subtext {
+    font-size: 0.8em;
+}
+
+#nitrogen-average {
+    color: blue;
+}
+
+#phosphorus-average {
+    color: red;
+}
+
+#rate-of-compliance {
+    color: chartreuse;
+}

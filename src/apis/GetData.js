@@ -4,31 +4,27 @@ import axios from "axios";
 const baseUrl =
   "https://services1.arcgis.com/YAnRDYVL1tmpajaA/ArcGIS/rest/services/NZ_WaterQuality/FeatureServer/0/";
 
-export default function Averages() {
-  let [nitrateNationalAverage, setNitrateNationalAverage] = useState(null);
-  let [phosphorusNationalAverage, setPhosphorusNationalAverage] =
-    useState(null);
+export default function GetData() {
+  let [nitrateNationalAverage, setNitrateNationalAverage] = useState(0);
+  let [phosphorusNationalAverage, setPhosphorusNationalAverage] = useState(0);
   let [rateOfCompliance, setRateOfCompliance] = useState(0);
-  let [sitesWithCompliance, setSitesWithCompliance] = useState([]);
+  let [siteDataWithCompliance, setSiteDataWithCompliance] = useState([]);
 
   function setCompliance(data, nitrateAverage, phosphorusAverage) {
     const dataWithCompliance = data.map((site) => {
-      if (
-        site.attributes.Nitrate < nitrateAverage &&
-        site.attributes.Phosphorus < phosphorusAverage
-      ) {
-        site.Compliance = true;
+      if ( site.attributes.Nitrate < nitrateAverage && site.attributes.Phosphorus < phosphorusAverage) {
+        site.attributes.Compliant = true;
       } else {
-        site.Compliance = false;
+        site.attributes.Compliant = false;
       }
       return site;
     });
-    setSitesWithCompliance(dataWithCompliance);
+    setSiteDataWithCompliance(dataWithCompliance);
     return dataWithCompliance;
   }
 
   function getComplianceRate(allSites) {
-    const compliant = allSites.filter((site) => site.Compliance === true);
+    const compliant = allSites.filter((site) => site.attributes.Compliant === true);
     const complianceRate = (compliant.length / allSites.length) * 100;
     setRateOfCompliance(complianceRate);
   }
@@ -66,6 +62,6 @@ export default function Averages() {
     nitrateNationalAverage: nitrateNationalAverage,
     phosphorusNationalAverage: phosphorusNationalAverage,
     compliantSiteRate: rateOfCompliance,
-    compliantSiteData: sitesWithCompliance
+    dataWithCompliance: siteDataWithCompliance
   };
 }

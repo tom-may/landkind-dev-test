@@ -1,18 +1,48 @@
 import React from "react";
-import Averages from "../apis/Averages";
+import GetData from "../apis/GetData";
+import './AveragesWidget.css'
 
 
 const AveragesWidget = () => {
 
-    const averages = Averages()
+    const data = GetData()
 
-    console.log(averages.compliantSiteData)
 
     return (
         <>
-        <p>Nitrate: { averages.nitrateNationalAverage }</p>
-        <p>Phosphorus: { averages.phosphorusNationalAverage }</p>
-        <p>Compliance Rate: { averages.compliantSiteRate }%</p>
+            <div className="container">
+                <div className="header">
+                    <p>State of NZ water Quality</p>
+                </div>
+                <div className="averages-container">
+                    <div className="averages-subcontainer">
+                        <div className="averages-circle">
+                            <p id="nitrogen-average">{data.nitrateNationalAverage}</p>
+                        </div>
+                        <div className="averages-text">
+                            <p>Average Nitrogen</p>
+                            <p className="averages-subtext">(parts per million)</p>
+                        </div>
+                    </div>
+                    <div className="averages-subcontainer">
+                        <div className="averages-circle">
+                            <p id="phosphorus-average">{data.phosphorusNationalAverage}</p>
+                        </div>
+                        <div className="averages-text">
+                            <p>Average Phosphorus</p>
+                            <p className="averages-subtext">(parts per million)</p>
+                        </div>
+                    </div>
+                    <div className="averages-subcontainer">
+                        <div className="averages-circle">
+                            <p id="rate-of-compliance">{data.compliantSiteRate}%</p>
+                        </div>
+                        <div className="averages-text">
+                            <p>Compliant with national standards</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </>
     )
 }
