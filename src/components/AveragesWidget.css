@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap');
+
 .container {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
     background-color: #00ab70;
     color: whitesmoke;
-    /* update shadow */
     box-shadow: 3px 3px grey; 
     position: fixed;
     top: 40px; 
@@ -21,41 +24,107 @@
 }
 
 .averages-subcontainer {
-    text-align: center;
     width: 100%;
+    text-align: center;
 }
 
+
 .averages-circle {
-    /* margin-left: 20%; */
-    width: 200px;
-    line-height: 200px;
-    border-radius: 50%; 
-    background-color: whitesmoke;
-    font-size: 3em;
+    font-weight: 500;
+    font-size: 4em;
+    margin-left: 10%;
+	width: 80%;
+	display:table;
+	border-radius:50%;
+    line-height: 0;
+	background: whitesmoke;
+}
+.averages-circle:before{
+	content:" ";
+	float:left;
+	height:0;
+	width: 0;
+	margin:100% 0 0;	
 }
 
 .averages-text {
-    margin-left: 10%;
-    margin-right: 10%;
-    font-size: larger;
+    margin-bottom: 10%;
+}
+
+.averages-main-text {
+    margin: 10% 10% 0% 10%;
+    font-size: 1.5em;
 }
 
 .averages-subtext {
-    font-size: 0.8em;
+    font-size: 1.2em;
+    margin: 0.5%;
 }
 
 #nitrogen-average {
+    margin-top: 50%;
     color: #208CE5;
 }
 
 #phosphorus-average {
+    margin-top: 50%;
     color: #E51354;
 }
 
 #rate-of-compliance {
+    margin-top: 50%;
     color: limegreen;
 }
 
 #percentage {
-    /* font-size: 0.5em; */
+    font-size: 0.5em;
 }
+
+@media only screen and (max-width: 1190px) {
+    .container {
+        position: fixed;
+        top: 70%; 
+        right: 0;
+        bottom: 0;
+        width: 100%;
+    }
+
+    .averages-circle {
+        font-size: 2em;
+        margin-left: 35%;
+        width: 30%;
+    }
+
+    .header {
+        font-size: 2em;
+    }
+  }
+
+  @media only screen and (max-width: 450px) {
+    .container{
+        font-size: 0.8em;
+        top: 75%;
+    }
+
+    .averages-circle {
+        font-weight: 500;
+        font-size: 1.5em;
+        margin-left: 30%;
+        width: 45%;
+    }
+    .header {
+        font-size: 2em;
+    }
+  }
+
+  @media only screen and (max-width: 450px) {
+    .container{
+        font-size: 0.6em;
+        top: 75%;
+    }
+
+    .header {
+        font-size: 2em;
+    }
+    
+  }

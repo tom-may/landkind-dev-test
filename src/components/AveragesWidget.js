@@ -15,28 +15,28 @@ const AveragesWidget = () => {
                 <div className="averages-container">
                     <div className="averages-subcontainer">
                         <div className="averages-circle">
-                            <p id="nitrogen-average">{data.nitrateNationalAverage}</p>
+                            <p id="nitrogen-average">{data.nitrateNationalAverage.toFixed(1)}</p>
                         </div>
                         <div className="averages-text">
-                            <p>Average Nitrogen</p>
+                            <p className="averages-main-text">Average Nitrogen</p>
                             <p className="averages-subtext">(parts per million)</p>
                         </div>
                     </div>
                     <div className="averages-subcontainer">
                         <div className="averages-circle">
-                            <p id="phosphorus-average">{data.phosphorusNationalAverage}</p>
+                            <p id="phosphorus-average">{data.phosphorusNationalAverage.toFixed(1)}</p>
                         </div>
-                        <div className="averages-text">
-                            <p>Average Phosphorus</p>
+                        <div>
+                            <p className="averages-main-text">Average Phosphorus</p>
                             <p className="averages-subtext">(parts per million)</p>
                         </div>
                     </div>
                     <div className="averages-subcontainer">
                         <div className="averages-circle">
-                            <p id="rate-of-compliance">{data.compliantSiteRate}<span id="percentage">%</span></p>
+                            <p id="rate-of-compliance">{data.compliantSiteRate.toFixed(1)}<span id="percentage">%</span></p>
                         </div>
-                        <div className="averages-text">
-                            <p>Compliant with national standards</p>
+                        <div>
+                            <p className="averages-main-text">Compliant with national standards</p>
                         </div>
                     </div>
                 </div>
