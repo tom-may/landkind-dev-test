@@ -20,11 +20,13 @@ Gray scale map, zoom and center:
 
  - Query feature layer: https://developers.arcgis.com/javascript/latest/query-a-feature-layer-sql/
 
- - Get X and Y co-ordinates from feature service and place blue or red pins as required.
+ - Get X and Y co-ordinates from getData and place blue or red pins as required.
 
  - conditional to determine class/colour of point
 
  - Create pop up to display name of pin: https://developers.arcgis.com/javascript/latest/add-a-point-line-and-polygon/#create-a-pop-up
+
+ - 
 
 
 ## Notes as I go
@@ -36,3 +38,10 @@ Gray scale map, zoom and center:
  - feature layer also has a Point Layer (feature service?) NZ_WaterQuality with URL: https://services1.arcgis.com/YAnRDYVL1tmpajaA/arcgis/rest/services/NZ_WaterQuality/FeatureServer/0
 
 - Layer has a table that can be queried using SQL
+
+## Improvements
+
+ - allow user to close widget, or make it a pop out modal
+ - allow user to  recenter map
+ - have pin popup layer infront of averages widget.
+

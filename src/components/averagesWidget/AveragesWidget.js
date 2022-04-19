@@ -1,13 +1,11 @@
 import React from "react";
-import GetData from "../apis/GetData";
+import GetData from "../../apis/GetData";
 import './AveragesWidget.css'
 
 
 const AveragesWidget = () => {
 
     const data = GetData()
-
-    console.log(data)
 
     return (
         <>

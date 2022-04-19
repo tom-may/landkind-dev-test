@@ -2,7 +2,8 @@ import React, { useEffect } from 'react';
 import WebMap from "@arcgis/core/WebMap";
 import MapView from "@arcgis/core/views/MapView"
 import './App.css';
-import AveragesWidget from './components/AveragesWidget';
+import AveragesWidget from './components/averagesWidget/AveragesWidget.js';
+import CompliancePins from './components/compliancePins/CompliancePins.js';
 
 export default function App() {
   useEffect(() => {
@@ -28,6 +29,7 @@ export default function App() {
     {/* Load esri API and the map */}
     <div id="mapView" className='map-view'/>
     <AveragesWidget />
+    <CompliancePins />
   </div>
   )
 }
