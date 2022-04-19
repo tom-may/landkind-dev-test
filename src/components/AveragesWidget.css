@@ -1,35 +1,43 @@
 .container {
     background-color: #00ab70;
-    color: white;
+    color: whitesmoke;
     /* update shadow */
     box-shadow: 3px 3px grey; 
     position: fixed;
     top: 40px; 
     right: 40px;
-    width: 40%;
+    width: 50%;
 }
 
 .header {
- font-size: 1.5em;
+    margin-top: 0.5em;
+    margin-bottom: 0.25em;
+    margin-left: 0.5em;
+    font-size: 3.5em;
 }
 
 .averages-container {
     display: flex;
-    justify-content: center;
-    
 }
 
 .averages-subcontainer {
     text-align: center;
-    width: 200px;
+    width: 100%;
 }
 
 .averages-circle {
-
+    /* margin-left: 20%; */
+    width: 200px;
+    line-height: 200px;
+    border-radius: 50%; 
+    background-color: whitesmoke;
+    font-size: 3em;
 }
 
 .averages-text {
-
+    margin-left: 10%;
+    margin-right: 10%;
+    font-size: larger;
 }
 
 .averages-subtext {
@@ -37,13 +45,17 @@
 }
 
 #nitrogen-average {
-    color: blue;
+    color: #208CE5;
 }
 
 #phosphorus-average {
-    color: red;
+    color: #E51354;
 }
 
 #rate-of-compliance {
-    color: chartreuse;
+    color: limegreen;
+}
+
+#percentage {
+    /* font-size: 0.5em; */
 }

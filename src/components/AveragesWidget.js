@@ -11,9 +11,7 @@ const AveragesWidget = () => {
     return (
         <>
             <div className="container">
-                <div className="header">
-                    <p>State of NZ water Quality</p>
-                </div>
+                <p className="header"> State of NZ water Quality</p>
                 <div className="averages-container">
                     <div className="averages-subcontainer">
                         <div className="averages-circle">
@@ -35,7 +33,7 @@ const AveragesWidget = () => {
                     </div>
                     <div className="averages-subcontainer">
                         <div className="averages-circle">
-                            <p id="rate-of-compliance">{data.compliantSiteRate}%</p>
+                            <p id="rate-of-compliance">{data.compliantSiteRate}<span id="percentage">%</span></p>
                         </div>
                         <div className="averages-text">
                             <p>Compliant with national standards</p>
