@@ -7,6 +7,7 @@ const AveragesWidget = () => {
 
     const data = GetData()
 
+    console.log(data)
 
     return (
         <>

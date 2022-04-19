@@ -30,12 +30,8 @@ export default function GetData() {
   }
 
   function findNationalAverages(data) {
-    let nitrateAverage =
-      data.reduce((total, next) => total + next.attributes.Nitrate, 0) /
-      data.length;
-    let phosphorusAverage =
-      data.reduce((total, next) => total + next.attributes.Phosphorus, 0) /
-      data.length;
+    let nitrateAverage = data.reduce((total, next) => total + next.attributes.Nitrate, 0) / data.length;
+    let phosphorusAverage = data.reduce((total, next) => total + next.attributes.Phosphorus, 0) /data.length;
 
     setNitrateNationalAverage(nitrateAverage);
     setPhosphorusNationalAverage(phosphorusAverage);

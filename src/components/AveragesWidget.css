@@ -1,11 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap');
 
 .container {
+    border-radius: 5px;
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
     background-color: #00ab70;
     color: whitesmoke;
-    box-shadow: 3px 3px grey; 
+
+    box-shadow:  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+    0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+    0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.12);
+
     position: fixed;
     top: 40px; 
     right: 40px;
@@ -13,9 +21,7 @@
 }
 
 .header {
-    margin-top: 0.5em;
-    margin-bottom: 0.25em;
-    margin-left: 0.5em;
+    margin: 0.5em 0 0.25em 0.5em;
     font-size: 3.5em;
 }
 
@@ -83,10 +89,10 @@
 @media only screen and (max-width: 1190px) {
     .container {
         position: fixed;
-        top: 70%; 
-        right: 0;
-        bottom: 0;
-        width: 100%;
+        top: 67.5%; 
+        right: 2.5%;
+        left: 2.5%;
+        width: 95%;
     }
 
     .averages-circle {
@@ -107,24 +113,15 @@
     }
 
     .averages-circle {
-        font-weight: 500;
         font-size: 1.5em;
         margin-left: 30%;
         width: 45%;
-    }
-    .header {
-        font-size: 2em;
     }
   }
 
   @media only screen and (max-width: 450px) {
     .container{
         font-size: 0.6em;
-        top: 75%;
+        top: 80%;
     }
-
-    .header {
-        font-size: 2em;
-    }
-    
   }
