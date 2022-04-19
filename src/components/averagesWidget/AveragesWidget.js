@@ -1,11 +1,10 @@
-import React from "react";
 import GetData from "../../apis/GetData";
-import './AveragesWidget.css'
+import "./AveragesWidget.css";
 
 
 const AveragesWidget = () => {
 
-    const data = GetData()
+    const data = GetData();
 
     return (
         <>
@@ -41,7 +40,7 @@ const AveragesWidget = () => {
                 </div>
             </div>
         </>
-    )
-}
+    );
+};
 
 export default AveragesWidget;
