@@ -18,7 +18,10 @@ export default function App() {
         container: "mapView",
         map: webMap,
         center: [-178, -41],
-        zoom: 5
+        zoom: 5,
+        constraints: {
+          minZoom: 5,
+        }
       });
     }
     setupWebMap()
