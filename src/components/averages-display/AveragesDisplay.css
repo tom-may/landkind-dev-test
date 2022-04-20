@@ -1,3 +1,8 @@
+/* Vanilla css is used here - nothing too fancy, just a little flex */
+/* @media query is used for mobile responsiveness. My definitions are not perfect, but it does the trick */
+
+/* I also had a fancy drop/box shadow (thanks google), but removed it to better match the wireframe :) */
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap');
 
 .container {
@@ -112,9 +117,9 @@
     }
   }
 
-  @media only screen and (max-width: 450px) {
+  @media only screen and (max-width: 390px) {
     .container{
         font-size: 0.6em;
-        top: 80%;
+        top: 75%;
     }
   }

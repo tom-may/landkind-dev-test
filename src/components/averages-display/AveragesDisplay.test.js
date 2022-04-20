@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import AveragesWidget from "./AveragesWidget";
+import AveragesWidget from "./AveragesDisplay";
 
 it("renders without crashing", () => {
     const div = document.createElement("div");

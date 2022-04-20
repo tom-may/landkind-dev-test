@@ -1,5 +1,10 @@
-import GetData from "../../apis/GetData";
-import "./AveragesWidget.css";
+// Nothing special here. Data is called from the GetData() component and rendered in the widget
+// Styling is defined in .css file
+// To avoid complication, no css framework is used
+
+import React from "react";
+import GetData from "../get-data/GetData";
+import "./AveragesDisplay.css";
 
 
 const AveragesWidget = () => {

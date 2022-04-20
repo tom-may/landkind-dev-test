@@ -1,10 +1,21 @@
-import { useState, useEffect } from "react";
+
+// I created this component in order to seperate the functionallity of assessing the data 
+// from the feature service, and from rendering the AveragesDisplay.
+
+// Utilising useEffect, The data is assessed on render and new data atrributes for averages
+// and compliance are set. This approach allowed me to calculate averages and rate of compliance for
+// all sites, before rendering these figures on the page.
+
+// My intention was to be able to call this component to use the data throughout the codebase.
+
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 const baseUrl =
     "https://services1.arcgis.com/YAnRDYVL1tmpajaA/ArcGIS/rest/services/NZ_WaterQuality/FeatureServer/0/";
 
 export default function GetData() {
+
     let [nitrateNationalAverage, setNitrateNationalAverage] = useState(0);
     let [phosphorusNationalAverage, setPhosphorusNationalAverage] = useState(0);
     let [rateOfCompliance, setRateOfCompliance] = useState(0);
@@ -47,6 +58,7 @@ export default function GetData() {
             getComplianceRate(dataWithCompliance);
         }
 
+        // Grabs all data from the feature service table
         axios
             .get(baseUrl + "query?Where=OBJECTID>0&outFields=*&f=json")
             .then((response) => {
@@ -55,11 +67,11 @@ export default function GetData() {
     }, []);
 
     // Returns averages, rate of compliance and new array of all data with compliance included
-    // to be injected anywhere in the codebase
     return {
         nitrateNationalAverage: nitrateNationalAverage,
         phosphorusNationalAverage: phosphorusNationalAverage,
         compliantSiteRate: rateOfCompliance,
+        // I hoped to use this to determine pin colour for sites on the map. 
         dataWithCompliance: siteDataWithCompliance
     };
 }

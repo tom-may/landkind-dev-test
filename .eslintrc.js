@@ -25,8 +25,8 @@ module.exports = {
         "indent": ["error", 4],
         "linebreak-style": ["error", "unix"],
         "quotes": ["error", "double"],
-        "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
-        "react-hooks/exhaustive-deps": "warn", // Checks effect dependencies
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "off",
 
         // override default options for rules from base configurations
         "no-cond-assign": ["error", "always"],
