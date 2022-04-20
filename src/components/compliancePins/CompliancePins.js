@@ -7,12 +7,7 @@ import { faLocationPin } from "@fortawesome/free-solid-svg-icons";
 const CompliancePins = () => {
 
     const data = GetData().dataWithCompliance;
-
-    // Possible Link for styling points
-    // https://developers.arcgis.com/javascript/latest/visualization/location-styles/
-
-    // May need to create a new feature layer?
-
+    
     return (
         data && data.map(site => {
             if (site.attributes.Compliant) {
