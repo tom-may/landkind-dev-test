@@ -33,7 +33,8 @@ export default function App() {
             {/* Load esri API and the map */}
             <div id="mapView" className="map-view" />
             <AveragesWidget />
-            <CompliancePins />
+            {/* Compliance pins component disabled until it is completed*/}
+            {/* <CompliancePins /> */}
         </div>
     );
 }

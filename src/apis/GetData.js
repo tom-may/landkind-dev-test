@@ -10,7 +10,7 @@ export default function GetData() {
     let [rateOfCompliance, setRateOfCompliance] = useState(0);
     let [siteDataWithCompliance, setSiteDataWithCompliance] = useState([]);
 
-    function setCompliance(data, nitrateAverage, phosphorusAverage) {
+    function getCompliance(data, nitrateAverage, phosphorusAverage) {
         const dataWithCompliance = data.map((site) => {
             if (site.attributes.Nitrate < nitrateAverage && site.attributes.Phosphorus < phosphorusAverage) {
                 site.attributes.Compliant = true;
@@ -29,30 +29,32 @@ export default function GetData() {
         setRateOfCompliance(complianceRate);
     }
 
-    function findNationalAverages(data) {
-        let nitrateAverage = data.reduce((total, next) => total + next.attributes.Nitrate, 0) / data.length;
-        let phosphorusAverage = data.reduce((total, next) => total + next.attributes.Phosphorus, 0) / data.length;
-
-        setNitrateNationalAverage(nitrateAverage);
-        setPhosphorusNationalAverage(phosphorusAverage);
-
-        const dataWithCompliance = setCompliance(
-            data,
-            nitrateAverage,
-            phosphorusAverage
-        );
-        getComplianceRate(dataWithCompliance);
-    }
-
     useEffect(() => {
+
+        function setData(data) {
+            // Calculate and set national averages
+            let nitrateAverage = data.reduce((total, next) => total + next.attributes.Nitrate, 0) / data.length;
+            let phosphorusAverage = data.reduce((total, next) => total + next.attributes.Phosphorus, 0) / data.length;
+            setNitrateNationalAverage(nitrateAverage);
+            setPhosphorusNationalAverage(phosphorusAverage);
+            // Get compliance using national averages and set new data array with added compliance attribute.   
+            const dataWithCompliance = getCompliance(
+                data,
+                nitrateAverage,
+                phosphorusAverage
+            );
+            // Calculate rate of compliance of all sites
+            getComplianceRate(dataWithCompliance);
+        }
+
         axios
-            .get(baseUrl + "query?Where=Nitrate>0&outFields=*&f=json")
+            .get(baseUrl + "query?Where=OBJECTID>0&outFields=*&f=json")
             .then((response) => {
-                findNationalAverages(response.data.features);
+                setData(response.data.features);
             });
     }, []);
 
-    // returns averages, rate of compliance and new array of all data with compliance included
+    // Returns averages, rate of compliance and new array of all data with compliance included
     // to be injected anywhere in the codebase
     return {
         nitrateNationalAverage: nitrateNationalAverage,

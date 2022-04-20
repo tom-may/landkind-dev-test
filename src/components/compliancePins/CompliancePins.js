@@ -8,8 +8,10 @@ const CompliancePins = () => {
 
     const data = GetData().dataWithCompliance;
 
-    // see here for styling points
+    // Possible Link for styling points
     // https://developers.arcgis.com/javascript/latest/visualization/location-styles/
+
+    // May need to create a new feature layer?
 
     return (
         data && data.map(site => {
